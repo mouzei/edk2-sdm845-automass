@@ -653,6 +653,11 @@ VOID EFIAPI PlatformBootManagerAfterConsole(VOID)
 
   PlatformRegisterFvBootOption(
       &gLinuxSimpleMassStorageGuid, L"USB Attached SCSI (UAS) Storage", LOAD_OPTION_ACTIVE);
+  
+  //
+  // Enumerate all possible boot options.
+  //
+  EfiBootManagerRefreshAllBootOption();
 
 }
 
