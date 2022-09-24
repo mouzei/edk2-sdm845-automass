@@ -119,10 +119,9 @@
   #
   # SimpleInit
   #
-  gSimpleInitTokenSpaceGuid.PcdDeviceTreeStore|0x83300000
+  gSimpleInitTokenSpaceGuid.PcdDeviceTreeStore|0xa3000000
   gSimpleInitTokenSpaceGuid.PcdLoggerdUseConsole|FALSE
 
-  # We bring up eight cores here!
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
   gArmPlatformTokenSpaceGuid.PcdClusterCount|2
 
@@ -154,7 +153,7 @@
   #
   gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvModeEnable|TRUE
 
-  gsdm845PkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9d400000
+  gsdm845PkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9c000000
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiExposedTableVersions|0x20
 
@@ -223,10 +222,6 @@
 
   MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
   MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
-
-  #
-  # GPIO
-  #
 
   #
   # Virtual Keyboard
@@ -340,11 +335,6 @@
 !ifdef $(INCLUDE_TFTP_COMMAND)
   ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf
 !endif #$(INCLUDE_TFTP_COMMAND)
-
-  sdm845Pkg/Binary/845/LinuxSimpleMassStorage/LinuxSimpleMassStorage.inf
-
-  sdm845Pkg/Drivers/SynapticsTouchDxe/SynapticsTouchDevice.inf
-  sdm845Pkg/Drivers/SynapticsTouchDxe/SynapticsTouchDxe.inf
 
 [BuildOptions.common]
   GCC:*_*_AARCH64_CC_FLAGS = -Wno-unused-variable -march=armv8.2-a+crypto+rcpc -mtune=cortex-a75.cortex-a55
